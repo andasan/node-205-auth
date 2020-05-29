@@ -12,7 +12,6 @@ exports.getLogin = (req, res, next) => {
     res.render('auth/login', {
         path: '/auth/login',
         pageTitle: 'Login Page',
-        isAuth: false,
         errorMessage: errMsg
     });
 };
@@ -66,7 +65,6 @@ exports.getSignup = (req, res, next) => {
     res.render('auth/signup', {
         path: '/signup',
         pageTitle: 'Sign Up Page',
-        isAuth: false,
         errorMessage: errMsg
     });
 };
