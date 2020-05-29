@@ -17,4 +17,14 @@ router.post('/login', authController.postLogin);
 // @access  Public
 router.post('/logout', authController.postLogout);
 
+// @route   GET /signup
+// @desc    User registration page
+// @access  Public
+router.get('/signup', authController.getSignup);
+
+// @route   POST /signup
+// @desc    Create a new user
+// @access  Public
+router.post('/signup', authController.postSignup);
+
 module.exports = router;

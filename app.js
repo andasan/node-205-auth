@@ -33,7 +33,6 @@ app.use(session({
   store: store
 }));
 
-//dummy auth
 app.use((req, res, next) => {
   if(!req.session.user){
     return next();
@@ -57,22 +56,7 @@ mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true
 })
   .then(() => {
-    console.log('Connected!');
-
-    //not necessary for production, just to create a user to get an id for dummy auth
-    User.findOne().then(user => {
-      if(!user){
-        const user = new User({
-          name: 'Maki',
-          email: 'maki@zushi.com',
-          cart: {
-            items: []
-          }
-        });
-        user.save();
-      }
-    });
-    
+    console.log('Connected!');    
     app.listen(3000);
   })
   .catch(err => {
